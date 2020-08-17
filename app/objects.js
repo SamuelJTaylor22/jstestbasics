@@ -6,6 +6,10 @@
 // boolean value, and the likes property should have a value that is an 
 // array.Inside the array, include at least 4 values.
 let goodDoggo = {
+  name: "Jackson",
+  legs: 4,
+  tail: true,
+  likes:["naps", "laps", "treats", "Ruby"]
   //your code in here
 }
 
@@ -14,6 +18,7 @@ let goodDoggo = {
 function howManyLegs() {
   // your code inside here
   // don't forget to use the return keyword
+  return goodDoggo.legs
 }
 
 // Cat Challenges
@@ -29,6 +34,8 @@ let cat = {
 // "Pickles" to "Kevin".Then use either dot or bracket notation to return 
 // the value of the name property.
 function renameCat() {
+  cat.name = "Kevin"
+  return cat.name
   // your code inside here
 }
 

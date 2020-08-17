@@ -7,6 +7,53 @@
     // output: 7
 
 function daysPosition(day, offset) {
+    
+    // if( day == "sunday"){
+    //     dayNumber = 1
+    // }
+    // else if( day == "monday"){
+    //     dayNumber = 2
+    // }
+    // else if( day == "tuesday"){
+    //     dayNumber = 3
+    // }
+    // else if( day == "wednesday"){
+    //     dayNumber = 4
+    // }
+    // else if( day == "thursday"){
+    //     dayNumber = 5
+    // }
+    // else if( day == "friday"){
+    //     dayNumber = 6
+    // }
+    // else if( day == "saturday"){
+    //     dayNumber = 7
+    // }
+ switch(day){
+     case "sunday": dayNumber = 1 ; break;
+     case "monday": dayNumber = 2; break;
+     case "tuesday": dayNumber = 3; break;
+     case "wednesday": dayNumber = 4; break;
+     case "thursday": dayNumber = 5; break;
+     case "friday": dayNumber = 6; break;
+     case "saturday": dayNumber = 7; break;
+ }
+
+    if( day == "sunday" || day == "monday" || day == "tuesday" || day == "wednesday" || day == "thursday" || day == "friday" || day == "saturday" ){
+        if(!offset){
+        return dayNumber
+        }
+        else if(dayNumber != 1){
+            dayNumber--
+            return dayNumber
+        }
+        else{
+            return 7
+        }
+    }
+    else{
+        return "That's not a day of the week"
+    }
 
 }
 
@@ -27,7 +74,34 @@ function daysPosition(day, offset) {
  */
 
  function golfScore(score, par) {
+    let scoreDif = score - par
 
+    if( score == 1){
+        return "Ace"
+    }
+    else{
+        if(scoreDif == -3 ){
+            return "Ace"
+        }
+        else if(scoreDif == -2 ){
+            return "Eagle"
+        }
+        else if(scoreDif == -1 ){
+            return "Birdie"
+        }
+        else if(scoreDif == 0 ){
+            return "Par"
+        }
+        else if(scoreDif == 1 ){
+            return "Bogie"
+        }
+        else if(scoreDif == 2 ){
+            return "Double Bogie"
+        }
+        else if(scoreDif >= 3 ){
+            return "Ouch"
+        }
+    }
  }
  
 
@@ -53,4 +127,26 @@ let count = 0
 
 function cardCounter(card) {
 
+switch(card){
+    case "2":
+    case "3":
+    case "4":
+    case "5":
+    case "6": count++; break;
+    case "7":
+    case "8":
+    case "9": console.log("no change"); break;
+    case "10":
+    case "J":
+    case "Q":
+    case "K":
+    case "A": count--; break;
 }
+if(count > 0){
+    return count.toString()+" Bet"
+}
+else if(count <= 0){
+    return count.toString()+" Hold"
+}
+}
+
